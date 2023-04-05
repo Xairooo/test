@@ -4,6 +4,7 @@ on:
   schedule:
     - cron: '0 0 1 * *'
 
+
 jobs:
   del_runs:
     runs-on: ubuntu-latest
@@ -11,7 +12,7 @@ jobs:
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@v2
         with:
-          token: ${{ token }}
+          token: ${{ github.token }}
           repository: ${{ github.repository }}
           retain_days: 0
           keep_minimum_runs: 0
